@@ -1,0 +1,610 @@
+{
+  "name": "AWSDYNAMO",
+  "type": "executer",
+  "main": "app.js",
+  "execProgram": "node",
+  "exposeRoute": false,
+  "imgUrl": "logo.png",
+  "version": "1.0.0",
+  "settings": [
+    {
+      "name": "accessKeyId",
+      "viewName": "Access Key",
+      "type": "vault",
+      "description": "The Access Key to connect to Dynamo database.",
+      "placeholder": "exe-us-east-1",
+      "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+    },
+    {
+      "name": "secretAccessKey",
+      "viewName": "Secret Key",
+      "type": "vault",
+      "description": "The Secret Key to connect to Dynamo database.",
+      "placeholder": "us-east-1",
+      "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+    },
+    {
+      "name": "region",
+      "viewName": "Region",
+      "type": "autocomplete",
+      "autocompleteType": "function",
+      "functionName": "getRegions",
+      "description": "The AWS region to make this request on.",
+      "placeholder": "us-east-2",
+      "learnUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html"
+    }
+  ],
+  "methods": [
+    {
+      "name": "create_Table",
+      "viewName": "Create Table",
+      "params": [
+        {
+          "name": "region",
+          "viewName": "Region",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getRegions",
+          "description": "The AWS region to make this request on.",
+          "placeholder": "us-east-2",
+          "learnUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html"
+        },
+        {
+          "name": "table_name",
+          "viewName": "table_name",
+          "type": "string",
+          "description": "The name of the Table",
+          "placeholder": "My_Table",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.Basics.html#WorkingWithTables.Basics.CreateTable"
+        },
+        {
+          "name": "table_schema",
+          "viewName": "table_schema",
+          "type": "text",
+          "description": "We give the perameters for make table in our database in json format",
+          "placeholder": "[{ 'AttributeName': 'Season','AttributeType':'N','KeyType': 'HASH'}]",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.Basics.html#WorkingWithTables.Basics.CreateTable"
+        }
+      ]
+    },
+    {
+      "name": "delete_Table",
+      "viewName": "Delete Table",
+      "params": [
+        {
+          "name": "region",
+          "viewName": "Region",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getRegions",
+          "description": "The AWS region to make this request on.",
+          "placeholder": "us-east-2",
+          "learnUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html"
+        },
+        {
+          "name": "table_name",
+          "viewName": "Table Name",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getTable",
+          "description": "The name of the table",
+          "placeholder": "My_TableName",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.Basics.html#WorkingWithTables.Basics.DeleteTable"
+        }
+      ]
+    },
+    {
+      "name": "update_Table",
+      "viewName": "Update Table",
+      "params": [
+        {
+          "name": "region",
+          "viewName": "Region",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getRegions",
+          "description": "The AWS region to make this request on.",
+          "placeholder": "us-east-2",
+          "learnUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html"
+        },
+        {
+          "name": "table_name",
+          "viewName": "Table Name",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getTable",
+          "description": "The name of the table",
+          "placeholder": "myTableName",
+          "learnUrl": "https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-dynamodb/interfaces/getitemcommandinput.html"
+        },
+        {
+          "name": "params",
+          "viewName": "Update Params",
+          "type": "string",
+          "description": "Update Parameters",
+          "placeholder": "{'ProvisionedThroughput': {'ReadCapacityUnits': '10', 'WriteCapacityUnits': '10'}}",
+          "learnUrl": "https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-dynamodb/interfaces/getitemcommandinput.html"
+        }
+      ]
+    },
+    {
+      "name": "list_Tables",
+      "viewName": "List Tables",
+      "params": [
+        {
+          "name": "region",
+          "viewName": "Region",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getRegions",
+          "description": "The AWS region to make this request on.",
+          "placeholder": "us-east-2",
+          "learnUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html"
+        },
+        {
+          "name": "limit",
+          "viewName": "Limt",
+          "type": "string",
+          "description": "The Limit of Outputs",
+          "placeholder": "10",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.Basics.html#WorkingWithTables.Basics.ListTables"
+        }
+      ]
+    },
+    {
+      "name": "describe_Table",
+      "viewName": "Describe Table",
+      "params": [
+        {
+          "name": "region",
+          "viewName": "Region",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getRegions",
+          "description": "The AWS region to make this request on.",
+          "placeholder": "us-east-2",
+          "learnUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html"
+        },
+        {
+          "name": "table_name",
+          "viewName": "Table Name",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getTable",
+          "description": "The name of the table",
+          "placeholder": "My_TableName",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.Basics.html#WorkingWithTables.Basics.DescribeTable"
+        }
+      ]
+    },
+    {
+      "name": "create_BackUp",
+      "viewName": "Create Back Up",
+      "params": [
+        {
+          "name": "region",
+          "viewName": "Region",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getRegions",
+          "description": "The AWS region to make this request on.",
+          "placeholder": "us-east-2",
+          "learnUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html"
+        },
+        {
+          "name": "table_name",
+          "viewName": "Table Name",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getTable",
+          "description": "The name of the table",
+          "placeholder": "My_TableName",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Backups.html"
+        },
+        {
+          "name": "backUpName",
+          "viewName": "Back Up Name",
+          "type": "string",
+          "description": "The name given to back up",
+          "placeholder": "My_BackUp",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Backups.html"
+        }
+      ]
+    },
+    {
+      "name": "delete_BackUp",
+      "viewName": "Delete Back Up",
+      "params": [
+        {
+          "name": "region",
+          "viewName": "Region",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getRegions",
+          "description": "The AWS region to make this request on.",
+          "placeholder": "us-east-2",
+          "learnUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html"
+        },
+        {
+          "name": "backUpName",
+          "viewName": "Back Up Name",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getBackups",
+          "description": "The name of the Backup Created",
+          "placeholder": "My_backUp",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/BackupRestore.html"
+        }
+      ]
+    },
+    {
+      "name": "put_Items",
+      "viewName": "Put Item",
+      "params": [
+        {
+          "name": "region",
+          "viewName": "Region",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getRegions",
+          "description": "The AWS region to make this request on.",
+          "placeholder": "us-east-2",
+          "learnUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html"
+        },
+        {
+          "name": "table_name",
+          "viewName": "Table Name",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getTable",
+          "description": "The name of the table",
+          "placeholder": "My_TableName",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"
+        },
+        {
+          "name": "itemData",
+          "viewName": "Item Data to put on",
+          "type": "string",
+          "description": "The Item Data to put on the table",
+          "placeholder": "{'Season': { 'N': 'First' },'Episode': {'N': '01' }}",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"
+        }
+      ]
+    },
+    {
+      "name": "batch_Write_Item",
+      "viewName": "Batch Write Items",
+      "params": [
+        {
+          "name": "region",
+          "viewName": "Region",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getRegions",
+          "description": "The AWS region to make this request on.",
+          "placeholder": "us-east-2",
+          "learnUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html"
+        },
+        {
+          "name": "table_name",
+          "viewName": "Table Name",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getTable",
+          "description": "The name of the table",
+          "placeholder": "My_TableName",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"
+        },
+        {
+          "name": "itemDatas",
+          "viewName": "Items",
+          "type": "string",
+          "description": "The Items Data to put on the table. Put the item in JSON format seperated by ',' ",
+          "placeholder": "{'AlbumTitle': {S: 'Somewhat Famous'}, 'Artist': {S: 'No One You Know'}, 'SongTitle': {S: 'Call Me Today'}}",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"
+        }
+      ]
+    },
+    {
+      "name": "get_Item",
+      "viewName": "Get Item",
+      "params": [
+        {
+          "name": "region",
+          "viewName": "Region",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getRegions",
+          "description": "The AWS region to make this request on.",
+          "placeholder": "us-east-2",
+          "learnUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html"
+        },
+        {
+          "name": "table_name",
+          "viewName": "Table Name",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getTable",
+          "description": "The name of the table",
+          "placeholder": "My_TableName",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"
+        },
+        {
+          "name": "key",
+          "viewName": "Key",
+          "type": "text",
+          "description": "A map of attribute names to AttributeValue objects, representing the primary key of the item to retrieve",
+          "placeholder": "{'KEY_NAME': {N: '001'}",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"
+        },
+        {
+          "name": "projectionExpression",
+          "viewName": "Projection Expression",
+          "type": "string",
+          "description": "A string that identifies one or more attributes to retrieve from the table",
+          "placeholder": "ATTRIBUTE_NAME, ....., ......",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"
+        }
+      ]
+    },
+    {
+      "name": "batch_Get_Item",
+      "viewName": "Get Batch Items",
+      "params": [
+        {
+          "name": "region",
+          "viewName": "Region",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getRegions",
+          "description": "The AWS region to make this request on.",
+          "placeholder": "us-east-2",
+          "learnUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html"
+        },
+        {
+          "name": "table_name",
+          "viewName": "Table Name",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getTable",
+          "description": "The name of the table",
+          "placeholder": "myTableName",
+          "learnUrl": "https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-dynamodb/interfaces/getitemcommandinput.html"
+        },
+        {
+          "name": "keys",
+          "viewName": "Batch Keys",
+          "type": "text",
+          "description": "A map of attribute names to AttributeValue objects, representing the primary key of the item to retrieve",
+          "placeholder": "{'KEY_NAME_1': {N: 'KEY_VALUE}, '{'KEY_NAME_2': {S: 'KEY_VALUE}",
+          "learnUrl": "https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-dynamodb/interfaces/getitemcommandinput.html"
+        },
+        {
+          "name": "projectionExpression",
+          "viewName": "Projection Expression",
+          "type": "string",
+          "description": "A string that identifies one or more attributes to retrieve from the table",
+          "placeholder": "ATTRIBUTE_NAME1, ATTRIBUTE_NAME2, ATTRIBUTE_NAME3",
+          "learnUrl": "https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-dynamodb/interfaces/getitemcommandinput.html"
+        }
+      ]
+    },
+    {
+      "name": "update_Item",
+      "viewName": "Update Item",
+      "params": [
+        {
+          "name": "region",
+          "viewName": "Region",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getRegions",
+          "description": "The AWS region to make this request on.",
+          "placeholder": "us-east-2",
+          "learnUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html"
+        },
+        {
+          "name": "table_name",
+          "viewName": "Table Name",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getTable",
+          "description": "The name of the table",
+          "placeholder": "myTableName",
+          "learnUrl": "https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-dynamodb/interfaces/getitemcommandinput.html"
+        },
+        {
+          "name": "key",
+          "viewName": "Key",
+          "type": "string",
+          "description": "A map of attribute names to AttributeValue objects, representing the primary key of the item to retrieve",
+          "placeholder": "{'KEY_NAME': {N: '001'}",
+          "learnUrl": "https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-dynamodb/interfaces/getitemcommandinput.html"
+        },
+        {
+          "name": "expressionAttributeValues",
+          "viewName": "Expression Attribute Values",
+          "type": "string",
+          "description": "Expression Attribute Values",
+          "placeholder": " {':t': {'S': 'Louder Than Ever'}, ':y': {'N': '2015'}}",
+          "learnUrl": "https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-dynamodb/interfaces/getitemcommandinput.html"
+        },
+        {
+          "name": "expressionAttributeNames",
+          "viewName": "Expression Attribute Names",
+          "type": "string",
+          "description": "Expression Attribute Names",
+          "placeholder": " {'#AT': 'AlbumTitle', '#Y': 'Year'}",
+          "learnUrl": "https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-dynamodb/interfaces/getitemcommandinput.html"
+        },
+        {
+          "name": "setExpression",
+          "viewName": "Set Expression",
+          "type": "string",
+          "description": "Set Expression",
+          "placeholder": " #Y = :y, #AT = :t",
+          "learnUrl": "https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-dynamodb/interfaces/getitemcommandinput.html"
+        }
+      ]
+    },
+    {
+      "name": "delete_Item",
+      "viewName": "Delete Item",
+      "params": [
+        {
+          "name": "region",
+          "viewName": "Region",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getRegions",
+          "description": "The AWS region to make this request on.",
+          "placeholder": "us-east-2",
+          "learnUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html"
+        },
+        {
+          "name": "table_name",
+          "viewName": "Table Name",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getTable",
+          "description": "The name of the table",
+          "placeholder": "My_TableName",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"
+        },
+        {
+          "name": "key",
+          "viewName": "Key",
+          "type": "text",
+          "description": "A map of attribute names to AttributeValue objects, representing the primary key of the item to retrieve",
+          "placeholder": "{'KEY_NAME': {N: '001'}",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"
+        }
+      ]
+    },
+    {
+      "name": "query",
+      "viewName": "Query",
+      "params": [
+        {
+          "name": "region",
+          "viewName": "Region",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getRegions",
+          "description": "The AWS region to make this request on.",
+          "placeholder": "us-east-2",
+          "learnUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html"
+        },
+        {
+          "name": "table_name",
+          "viewName": "Table Name",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getTable",
+          "description": "The name of the table",
+          "placeholder": "myTableName",
+          "learnUrl": "https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-dynamodb/interfaces/getitemcommandinput.html"
+        },
+        {
+          "name": "ExpressionAttributeValues",
+          "viewName": "Expression Attribute Value",
+          "type": "string",
+          "description": "Put the Expression attribute value to query the DynamoDB",
+          "placeholder": " {':n': {N: '1'}, ':e:{S:'MyName'}' }",
+          "learnUrl": "https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-dynamodb/interfaces/getitemcommandinput.html"
+        },
+        {
+          "name": "projectionExpression",
+          "viewName": "Projection Expression",
+          "type": "string",
+          "description": "Put the Projection Expression to query on as per expression attribute value",
+          "placeholder": " 'CUSTOMER_ID = :n'",
+          "learnUrl": "https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-dynamodb/interfaces/getitemcommandinput.html"
+        }
+      ]
+    },
+    {
+      "name": "scan",
+      "viewName": "Scan",
+      "params": [
+        {
+          "name": "region",
+          "viewName": "Region",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getRegions",
+          "description": "The AWS region to make this request on.",
+          "placeholder": "us-east-2",
+          "learnUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html"
+        },
+        {
+          "name": "table_name",
+          "viewName": "Table Name",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getTable",
+          "description": "The name of the table",
+          "placeholder": "myTableName",
+          "learnUrl": "https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-dynamodb/interfaces/getitemcommandinput.html"
+        },
+        {
+          "name": "projectionExpression",
+          "viewName": "Projection Expression",
+          "type": "string",
+          "description": "Projection Expression",
+          "placeholder": "Attribute_Name1, Attribute_Name2",
+          "learnUrl": "https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-dynamodb/interfaces/getitemcommandinput.html"
+        }
+      ]
+    },
+    {
+      "name": "execute_Statement",
+      "viewName": "Execute Statement",
+      "params": [
+        {
+          "name": "region",
+          "viewName": "Region",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getRegions",
+          "description": "The AWS region to make this request on.",
+          "placeholder": "us-east-2",
+          "learnUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html"
+        },
+        {
+          "name": "statement",
+          "viewName": "Statement",
+          "type": "string",
+          "description": "Statement to execute(in PartiQL)",
+          "placeholder": "SELECT * FROM Orders WHERE OrderID > 1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ExecuteStatement.html"
+        }
+      ]
+    },
+    {
+      "name": "execute_Statement",
+      "viewName": "Execute Statement",
+      "params": [
+        {
+          "name": "region",
+          "viewName": "Region",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getRegions",
+          "description": "The AWS region to make this request on.",
+          "placeholder": "us-east-2",
+          "learnUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html"
+        },
+        {
+          "name": "statements",
+          "viewName": "Statements",
+          "type": "text",
+          "description": "Statements to execute(in PartiQL)",
+          "placeholder": "Statement1, Statement2",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ExecuteStatement.html"
+        }
+      ]
+    }
+   
+  ]
+}
