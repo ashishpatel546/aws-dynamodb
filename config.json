@@ -1,5 +1,5 @@
 {
-  "name": "AWSDYNAMO",
+  "name": "AWS DynamoDB",
   "type": "executer",
   "main": "app.js",
   "execProgram": "node",
@@ -40,6 +40,22 @@
       "viewName": "Create Table",
       "params": [
         {
+          "name": "accessKeyId",
+          "viewName": "Access Key",
+          "type": "vault",
+          "description": "The Access Key to connect to Dynamo database.",
+          "placeholder": "exe-us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
+        {
+          "name": "secretAccessKey",
+          "viewName": "Secret Key",
+          "type": "vault",
+          "description": "The Secret Key to connect to Dynamo database.",
+          "placeholder": "us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
+        {
           "name": "region",
           "viewName": "Region",
           "type": "autocomplete",
@@ -51,7 +67,7 @@
         },
         {
           "name": "table_name",
-          "viewName": "table_name",
+          "viewName": "Table Name",
           "type": "string",
           "description": "The name of the Table",
           "placeholder": "My_Table",
@@ -59,7 +75,7 @@
         },
         {
           "name": "table_schema",
-          "viewName": "table_schema",
+          "viewName": "Table Schema",
           "type": "text",
           "description": "We give the perameters for make table in our database in json format",
           "placeholder": "[{ 'AttributeName': 'Season','AttributeType':'N','KeyType': 'HASH'}]",
@@ -71,6 +87,22 @@
       "name": "delete_Table",
       "viewName": "Delete Table",
       "params": [
+        {
+          "name": "accessKeyId",
+          "viewName": "Access Key",
+          "type": "vault",
+          "description": "The Access Key to connect to Dynamo database.",
+          "placeholder": "exe-us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
+        {
+          "name": "secretAccessKey",
+          "viewName": "Secret Key",
+          "type": "vault",
+          "description": "The Secret Key to connect to Dynamo database.",
+          "placeholder": "us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
         {
           "name": "region",
           "viewName": "Region",
@@ -97,6 +129,22 @@
       "name": "update_Table",
       "viewName": "Update Table",
       "params": [
+        {
+          "name": "accessKeyId",
+          "viewName": "Access Key",
+          "type": "vault",
+          "description": "The Access Key to connect to Dynamo database.",
+          "placeholder": "exe-us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
+        {
+          "name": "secretAccessKey",
+          "viewName": "Secret Key",
+          "type": "vault",
+          "description": "The Secret Key to connect to Dynamo database.",
+          "placeholder": "us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
         {
           "name": "region",
           "viewName": "Region",
@@ -132,6 +180,22 @@
       "viewName": "List Tables",
       "params": [
         {
+          "name": "accessKeyId",
+          "viewName": "Access Key",
+          "type": "vault",
+          "description": "The Access Key to connect to Dynamo database.",
+          "placeholder": "exe-us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
+        {
+          "name": "secretAccessKey",
+          "viewName": "Secret Key",
+          "type": "vault",
+          "description": "The Secret Key to connect to Dynamo database.",
+          "placeholder": "us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
+        {
           "name": "region",
           "viewName": "Region",
           "type": "autocomplete",
@@ -155,6 +219,22 @@
       "name": "describe_Table",
       "viewName": "Describe Table",
       "params": [
+        {
+          "name": "accessKeyId",
+          "viewName": "Access Key",
+          "type": "vault",
+          "description": "The Access Key to connect to Dynamo database.",
+          "placeholder": "exe-us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
+        {
+          "name": "secretAccessKey",
+          "viewName": "Secret Key",
+          "type": "vault",
+          "description": "The Secret Key to connect to Dynamo database.",
+          "placeholder": "us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
         {
           "name": "region",
           "viewName": "Region",
@@ -181,6 +261,22 @@
       "name": "create_BackUp",
       "viewName": "Create Back Up",
       "params": [
+        {
+          "name": "accessKeyId",
+          "viewName": "Access Key",
+          "type": "vault",
+          "description": "The Access Key to connect to Dynamo database.",
+          "placeholder": "exe-us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
+        {
+          "name": "secretAccessKey",
+          "viewName": "Secret Key",
+          "type": "vault",
+          "description": "The Secret Key to connect to Dynamo database.",
+          "placeholder": "us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
         {
           "name": "region",
           "viewName": "Region",
@@ -216,6 +312,22 @@
       "viewName": "Delete Back Up",
       "params": [
         {
+          "name": "accessKeyId",
+          "viewName": "Access Key",
+          "type": "vault",
+          "description": "The Access Key to connect to Dynamo database.",
+          "placeholder": "exe-us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
+        {
+          "name": "secretAccessKey",
+          "viewName": "Secret Key",
+          "type": "vault",
+          "description": "The Secret Key to connect to Dynamo database.",
+          "placeholder": "us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
+        {
           "name": "region",
           "viewName": "Region",
           "type": "autocomplete",
@@ -242,6 +354,22 @@
       "viewName": "Put Item",
       "params": [
         {
+          "name": "accessKeyId",
+          "viewName": "Access Key",
+          "type": "vault",
+          "description": "The Access Key to connect to Dynamo database.",
+          "placeholder": "exe-us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
+        {
+          "name": "secretAccessKey",
+          "viewName": "Secret Key",
+          "type": "vault",
+          "description": "The Secret Key to connect to Dynamo database.",
+          "placeholder": "us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
+        {
           "name": "region",
           "viewName": "Region",
           "type": "autocomplete",
@@ -263,7 +391,7 @@
         },
         {
           "name": "itemData",
-          "viewName": "Item Data to put on",
+          "viewName": "Item Data to Put On",
           "type": "string",
           "description": "The Item Data to put on the table",
           "placeholder": "{'Season': { 'N': 'First' },'Episode': {'N': '01' }}",
@@ -275,6 +403,22 @@
       "name": "batch_Write_Item",
       "viewName": "Batch Write Items",
       "params": [
+        {
+          "name": "accessKeyId",
+          "viewName": "Access Key",
+          "type": "vault",
+          "description": "The Access Key to connect to Dynamo database.",
+          "placeholder": "exe-us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
+        {
+          "name": "secretAccessKey",
+          "viewName": "Secret Key",
+          "type": "vault",
+          "description": "The Secret Key to connect to Dynamo database.",
+          "placeholder": "us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
         {
           "name": "region",
           "viewName": "Region",
@@ -309,6 +453,22 @@
       "name": "get_Item",
       "viewName": "Get Item",
       "params": [
+        {
+          "name": "accessKeyId",
+          "viewName": "Access Key",
+          "type": "vault",
+          "description": "The Access Key to connect to Dynamo database.",
+          "placeholder": "exe-us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
+        {
+          "name": "secretAccessKey",
+          "viewName": "Secret Key",
+          "type": "vault",
+          "description": "The Secret Key to connect to Dynamo database.",
+          "placeholder": "us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
         {
           "name": "region",
           "viewName": "Region",
@@ -352,6 +512,22 @@
       "viewName": "Get Batch Items",
       "params": [
         {
+          "name": "accessKeyId",
+          "viewName": "Access Key",
+          "type": "vault",
+          "description": "The Access Key to connect to Dynamo database.",
+          "placeholder": "exe-us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
+        {
+          "name": "secretAccessKey",
+          "viewName": "Secret Key",
+          "type": "vault",
+          "description": "The Secret Key to connect to Dynamo database.",
+          "placeholder": "us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
+        {
           "name": "region",
           "viewName": "Region",
           "type": "autocomplete",
@@ -393,6 +569,22 @@
       "name": "update_Item",
       "viewName": "Update Item",
       "params": [
+        {
+          "name": "accessKeyId",
+          "viewName": "Access Key",
+          "type": "vault",
+          "description": "The Access Key to connect to Dynamo database.",
+          "placeholder": "exe-us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
+        {
+          "name": "secretAccessKey",
+          "viewName": "Secret Key",
+          "type": "vault",
+          "description": "The Secret Key to connect to Dynamo database.",
+          "placeholder": "us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
         {
           "name": "region",
           "viewName": "Region",
@@ -452,6 +644,22 @@
       "viewName": "Delete Item",
       "params": [
         {
+          "name": "accessKeyId",
+          "viewName": "Access Key",
+          "type": "vault",
+          "description": "The Access Key to connect to Dynamo database.",
+          "placeholder": "exe-us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
+        {
+          "name": "secretAccessKey",
+          "viewName": "Secret Key",
+          "type": "vault",
+          "description": "The Secret Key to connect to Dynamo database.",
+          "placeholder": "us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
+        {
           "name": "region",
           "viewName": "Region",
           "type": "autocomplete",
@@ -485,6 +693,22 @@
       "name": "query",
       "viewName": "Query",
       "params": [
+        {
+          "name": "accessKeyId",
+          "viewName": "Access Key",
+          "type": "vault",
+          "description": "The Access Key to connect to Dynamo database.",
+          "placeholder": "exe-us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
+        {
+          "name": "secretAccessKey",
+          "viewName": "Secret Key",
+          "type": "vault",
+          "description": "The Secret Key to connect to Dynamo database.",
+          "placeholder": "us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
         {
           "name": "region",
           "viewName": "Region",
@@ -528,6 +752,22 @@
       "viewName": "Scan",
       "params": [
         {
+          "name": "accessKeyId",
+          "viewName": "Access Key",
+          "type": "vault",
+          "description": "The Access Key to connect to Dynamo database.",
+          "placeholder": "exe-us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
+        {
+          "name": "secretAccessKey",
+          "viewName": "Secret Key",
+          "type": "vault",
+          "description": "The Secret Key to connect to Dynamo database.",
+          "placeholder": "us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
+        {
           "name": "region",
           "viewName": "Region",
           "type": "autocomplete",
@@ -562,6 +802,22 @@
       "viewName": "Execute Statement",
       "params": [
         {
+          "name": "accessKeyId",
+          "viewName": "Access Key",
+          "type": "vault",
+          "description": "The Access Key to connect to Dynamo database.",
+          "placeholder": "exe-us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
+        {
+          "name": "secretAccessKey",
+          "viewName": "Secret Key",
+          "type": "vault",
+          "description": "The Secret Key to connect to Dynamo database.",
+          "placeholder": "us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
+        {
           "name": "region",
           "viewName": "Region",
           "type": "autocomplete",
@@ -585,6 +841,22 @@
       "name": "execute_Statement",
       "viewName": "Execute Statement",
       "params": [
+        {
+          "name": "accessKeyId",
+          "viewName": "Access Key",
+          "type": "vault",
+          "description": "The Access Key to connect to Dynamo database.",
+          "placeholder": "exe-us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
+        {
+          "name": "secretAccessKey",
+          "viewName": "Secret Key",
+          "type": "vault",
+          "description": "The Secret Key to connect to Dynamo database.",
+          "placeholder": "us-east-1",
+          "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
+        },
         {
           "name": "region",
           "viewName": "Region",
