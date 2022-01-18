@@ -1,5 +1,5 @@
 {
-  "name": "AWS DynamoDB",
+  "name": "AWS-DynamoDB",
   "type": "executer",
   "main": "app.js",
   "execProgram": "node",
@@ -12,7 +12,7 @@
       "viewName": "Access Key",
       "type": "vault",
       "description": "The Access Key to connect to Dynamo database.",
-      "placeholder": "exe-us-east-1",
+       "placeholder": "AKIAXPYWEWIKD3Z6",
       "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
     },
     {
@@ -20,15 +20,13 @@
       "viewName": "Secret Key",
       "type": "vault",
       "description": "The Secret Key to connect to Dynamo database.",
-      "placeholder": "us-east-1",
+      "placeholder": "zhfMGOMRrQZpAQiq7m3TclQXndt/wA7Nf",
       "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
     },
     {
       "name": "region",
       "viewName": "Region",
-      "type": "autocomplete",
-      "autocompleteType": "function",
-      "functionName": "getRegions",
+      "type": "string",
       "description": "The AWS region to make this request on.",
       "placeholder": "us-east-2",
       "learnUrl": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html"
@@ -44,7 +42,7 @@
           "viewName": "Access Key",
           "type": "vault",
           "description": "The Access Key to connect to Dynamo database.",
-          "placeholder": "exe-us-east-1",
+          "placeholder": "AKIAXPYWEWIKD3Z6",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -52,7 +50,7 @@
           "viewName": "Secret Key",
           "type": "vault",
           "description": "The Secret Key to connect to Dynamo database.",
-          "placeholder": "us-east-1",
+          "placeholder": "zhfMGOMRrQZpAQiq7m3TclQXndt/wA7Nf",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -92,7 +90,7 @@
           "viewName": "Access Key",
           "type": "vault",
           "description": "The Access Key to connect to Dynamo database.",
-          "placeholder": "exe-us-east-1",
+          "placeholder": "AKIAXPYWEWIKD3Z6",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -100,7 +98,7 @@
           "viewName": "Secret Key",
           "type": "vault",
           "description": "The Secret Key to connect to Dynamo database.",
-          "placeholder": "us-east-1",
+          "placeholder": "zhfMGOMRrQZpAQiq7m3TclQXndt/wA7Nf",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -134,7 +132,7 @@
           "viewName": "Access Key",
           "type": "vault",
           "description": "The Access Key to connect to Dynamo database.",
-          "placeholder": "exe-us-east-1",
+           "placeholder": "AKIAXPYWEWIKD3Z6",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -142,7 +140,7 @@
           "viewName": "Secret Key",
           "type": "vault",
           "description": "The Secret Key to connect to Dynamo database.",
-          "placeholder": "us-east-1",
+          "placeholder": "zhfMGOMRrQZpAQiq7m3TclQXndt/wA7Nf",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -184,7 +182,7 @@
           "viewName": "Access Key",
           "type": "vault",
           "description": "The Access Key to connect to Dynamo database.",
-          "placeholder": "exe-us-east-1",
+           "placeholder": "AKIAXPYWEWIKD3Z6",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -192,7 +190,7 @@
           "viewName": "Secret Key",
           "type": "vault",
           "description": "The Secret Key to connect to Dynamo database.",
-          "placeholder": "us-east-1",
+          "placeholder": "zhfMGOMRrQZpAQiq7m3TclQXndt/wA7Nf",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -224,7 +222,7 @@
           "viewName": "Access Key",
           "type": "vault",
           "description": "The Access Key to connect to Dynamo database.",
-          "placeholder": "exe-us-east-1",
+           "placeholder": "AKIAXPYWEWIKD3Z6",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -232,7 +230,7 @@
           "viewName": "Secret Key",
           "type": "vault",
           "description": "The Secret Key to connect to Dynamo database.",
-          "placeholder": "us-east-1",
+          "placeholder": "zhfMGOMRrQZpAQiq7m3TclQXndt/wA7Nf",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -266,7 +264,7 @@
           "viewName": "Access Key",
           "type": "vault",
           "description": "The Access Key to connect to Dynamo database.",
-          "placeholder": "exe-us-east-1",
+           "placeholder": "AKIAXPYWEWIKD3Z6",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -274,7 +272,7 @@
           "viewName": "Secret Key",
           "type": "vault",
           "description": "The Secret Key to connect to Dynamo database.",
-          "placeholder": "us-east-1",
+          "placeholder": "zhfMGOMRrQZpAQiq7m3TclQXndt/wA7Nf",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -316,7 +314,7 @@
           "viewName": "Access Key",
           "type": "vault",
           "description": "The Access Key to connect to Dynamo database.",
-          "placeholder": "exe-us-east-1",
+           "placeholder": "AKIAXPYWEWIKD3Z6",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -324,7 +322,7 @@
           "viewName": "Secret Key",
           "type": "vault",
           "description": "The Secret Key to connect to Dynamo database.",
-          "placeholder": "us-east-1",
+          "placeholder": "zhfMGOMRrQZpAQiq7m3TclQXndt/wA7Nf",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -358,7 +356,7 @@
           "viewName": "Access Key",
           "type": "vault",
           "description": "The Access Key to connect to Dynamo database.",
-          "placeholder": "exe-us-east-1",
+           "placeholder": "AKIAXPYWEWIKD3Z6",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -366,7 +364,7 @@
           "viewName": "Secret Key",
           "type": "vault",
           "description": "The Secret Key to connect to Dynamo database.",
-          "placeholder": "us-east-1",
+          "placeholder": "zhfMGOMRrQZpAQiq7m3TclQXndt/wA7Nf",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -408,7 +406,7 @@
           "viewName": "Access Key",
           "type": "vault",
           "description": "The Access Key to connect to Dynamo database.",
-          "placeholder": "exe-us-east-1",
+           "placeholder": "AKIAXPYWEWIKD3Z6",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -416,7 +414,7 @@
           "viewName": "Secret Key",
           "type": "vault",
           "description": "The Secret Key to connect to Dynamo database.",
-          "placeholder": "us-east-1",
+          "placeholder": "zhfMGOMRrQZpAQiq7m3TclQXndt/wA7Nf",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -458,7 +456,7 @@
           "viewName": "Access Key",
           "type": "vault",
           "description": "The Access Key to connect to Dynamo database.",
-          "placeholder": "exe-us-east-1",
+           "placeholder": "AKIAXPYWEWIKD3Z6",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -466,7 +464,7 @@
           "viewName": "Secret Key",
           "type": "vault",
           "description": "The Secret Key to connect to Dynamo database.",
-          "placeholder": "us-east-1",
+          "placeholder": "zhfMGOMRrQZpAQiq7m3TclQXndt/wA7Nf",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -516,7 +514,7 @@
           "viewName": "Access Key",
           "type": "vault",
           "description": "The Access Key to connect to Dynamo database.",
-          "placeholder": "exe-us-east-1",
+           "placeholder": "AKIAXPYWEWIKD3Z6",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -524,7 +522,7 @@
           "viewName": "Secret Key",
           "type": "vault",
           "description": "The Secret Key to connect to Dynamo database.",
-          "placeholder": "us-east-1",
+          "placeholder": "zhfMGOMRrQZpAQiq7m3TclQXndt/wA7Nf",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -574,7 +572,7 @@
           "viewName": "Access Key",
           "type": "vault",
           "description": "The Access Key to connect to Dynamo database.",
-          "placeholder": "exe-us-east-1",
+           "placeholder": "AKIAXPYWEWIKD3Z6",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -582,7 +580,7 @@
           "viewName": "Secret Key",
           "type": "vault",
           "description": "The Secret Key to connect to Dynamo database.",
-          "placeholder": "us-east-1",
+          "placeholder": "zhfMGOMRrQZpAQiq7m3TclQXndt/wA7Nf",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -648,7 +646,7 @@
           "viewName": "Access Key",
           "type": "vault",
           "description": "The Access Key to connect to Dynamo database.",
-          "placeholder": "exe-us-east-1",
+           "placeholder": "AKIAXPYWEWIKD3Z6",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -656,7 +654,7 @@
           "viewName": "Secret Key",
           "type": "vault",
           "description": "The Secret Key to connect to Dynamo database.",
-          "placeholder": "us-east-1",
+          "placeholder": "zhfMGOMRrQZpAQiq7m3TclQXndt/wA7Nf",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -698,7 +696,7 @@
           "viewName": "Access Key",
           "type": "vault",
           "description": "The Access Key to connect to Dynamo database.",
-          "placeholder": "exe-us-east-1",
+           "placeholder": "AKIAXPYWEWIKD3Z6",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -706,7 +704,7 @@
           "viewName": "Secret Key",
           "type": "vault",
           "description": "The Secret Key to connect to Dynamo database.",
-          "placeholder": "us-east-1",
+          "placeholder": "zhfMGOMRrQZpAQiq7m3TclQXndt/wA7Nf",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -756,7 +754,7 @@
           "viewName": "Access Key",
           "type": "vault",
           "description": "The Access Key to connect to Dynamo database.",
-          "placeholder": "exe-us-east-1",
+           "placeholder": "AKIAXPYWEWIKD3Z6",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -764,7 +762,7 @@
           "viewName": "Secret Key",
           "type": "vault",
           "description": "The Secret Key to connect to Dynamo database.",
-          "placeholder": "us-east-1",
+          "placeholder": "zhfMGOMRrQZpAQiq7m3TclQXndt/wA7Nf",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -806,7 +804,7 @@
           "viewName": "Access Key",
           "type": "vault",
           "description": "The Access Key to connect to Dynamo database.",
-          "placeholder": "exe-us-east-1",
+           "placeholder": "AKIAXPYWEWIKD3Z6",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -814,7 +812,7 @@
           "viewName": "Secret Key",
           "type": "vault",
           "description": "The Secret Key to connect to Dynamo database.",
-          "placeholder": "us-east-1",
+          "placeholder": "zhfMGOMRrQZpAQiq7m3TclQXndt/wA7Nf",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -846,7 +844,7 @@
           "viewName": "Access Key",
           "type": "vault",
           "description": "The Access Key to connect to Dynamo database.",
-          "placeholder": "exe-us-east-1",
+           "placeholder": "AKIAXPYWEWIKD3Z6",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {
@@ -854,7 +852,7 @@
           "viewName": "Secret Key",
           "type": "vault",
           "description": "The Secret Key to connect to Dynamo database.",
-          "placeholder": "us-east-1",
+          "placeholder": "zhfMGOMRrQZpAQiq7m3TclQXndt/wA7Nf",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDynamo.html"
         },
         {

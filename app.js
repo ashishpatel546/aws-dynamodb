@@ -7,9 +7,9 @@ const AwsDynamoDBService = require('./awsDyanmoDbService');
 async function create_Table(action, settings){
   const {accessKeyId, secretAccessKey} = settings
     const loginParams = {
-        region: parsers.autocomplete(action.params.region || settings.region)/* Change to correct parser */,
-        accessKeyId: parsers.string(accessKeyId)/* Change to correct parser */,
-        secretAccessKey: parsers.string(secretAccessKey)/* Change to correct parser */,
+        region: parsers.autocomplete(action.params.region) || parsers.string(settings.region)/* Change to correct parser */,
+        accessKeyId: parsers.string(action.params.accessKeyId) || parsers.string(accessKeyId)/* Change to correct parser */,
+        secretAccessKey: parsers.string(action.params.secretAccessKey) || parsers.string(secretAccessKey)/* Change to correct parser */,
     }
 
     const awsService = AwsDynamoDBService.from(loginParams)
@@ -54,11 +54,11 @@ async function create_Table(action, settings){
 
 async function delete_Table(action, settings){
   const {accessKeyId, secretAccessKey} = settings
-    const loginParams = {
-        region: parsers.autocomplete(action.params.region)/* Change to correct parser */,
-        accessKeyId: parsers.string(accessKeyId)/* Change to correct parser */,
-        secretAccessKey: parsers.string(secretAccessKey)/* Change to correct parser */,
-    }
+  const loginParams = {
+    region: parsers.autocomplete(action.params.region) || parsers.string(settings.region)/* Change to correct parser */,
+    accessKeyId: parsers.string(action.params.accessKeyId) || parsers.string(accessKeyId)/* Change to correct parser */,
+    secretAccessKey: parsers.string(action.params.secretAccessKey) || parsers.string(secretAccessKey)/* Change to correct parser */,
+}
 
   const awsService = AwsDynamoDBService.from(loginParams)
 
@@ -74,10 +74,10 @@ async function delete_Table(action, settings){
 async function list_Tables(action, settings){
   const {accessKeyId, secretAccessKey} = settings
   const loginParams = {
-      region: parsers.autocomplete(action.params.region || settings.region)/* Change to correct parser */,
-      accessKeyId: parsers.string(accessKeyId)/* Change to correct parser */,
-      secretAccessKey: parsers.string(secretAccessKey)/* Change to correct parser */,
-  }
+    region: parsers.autocomplete(action.params.region) || parsers.string(settings.region)/* Change to correct parser */,
+    accessKeyId: parsers.string(action.params.accessKeyId) || parsers.string(accessKeyId)/* Change to correct parser */,
+    secretAccessKey: parsers.string(action.params.secretAccessKey) || parsers.string(secretAccessKey)/* Change to correct parser */,
+}
     
   const awsService = AwsDynamoDBService.from(loginParams)
   const {limit}= action.params
@@ -91,10 +91,10 @@ async function list_Tables(action, settings){
 async function describe_Table(action, settings){
   const {accessKeyId, secretAccessKey} = settings
   const loginParams = {
-      region: parsers.autocomplete(action.params.region || settings.region)/* Change to correct parser */,
-      accessKeyId: parsers.string(accessKeyId)/* Change to correct parser */,
-      secretAccessKey: parsers.string(secretAccessKey)/* Change to correct parser */,
-  }
+    region: parsers.autocomplete(action.params.region) || parsers.string(settings.region)/* Change to correct parser */,
+    accessKeyId: parsers.string(action.params.accessKeyId) || parsers.string(accessKeyId)/* Change to correct parser */,
+    secretAccessKey: parsers.string(action.params.secretAccessKey) || parsers.string(secretAccessKey)/* Change to correct parser */,
+}
     
   const awsService = AwsDynamoDBService.from(loginParams)
   const {table_name}= action.params
@@ -107,29 +107,30 @@ async function describe_Table(action, settings){
 async function update_Table(action, settings){
   const {accessKeyId, secretAccessKey} = settings
   const loginParams = {
-      region: parsers.autocomplete(action.params.region || settings.region)/* Change to correct parser */,
-      accessKeyId: parsers.string(accessKeyId)/* Change to correct parser */,
-      secretAccessKey: parsers.string(secretAccessKey)/* Change to correct parser */,
-  }
+    region: parsers.autocomplete(action.params.region) || parsers.string(settings.region)/* Change to correct parser */,
+    accessKeyId: parsers.string(action.params.accessKeyId) || parsers.string(accessKeyId)/* Change to correct parser */,
+    secretAccessKey: parsers.string(action.params.secretAccessKey) || parsers.string(secretAccessKey)/* Change to correct parser */,
+}
     
   const awsService = AwsDynamoDBService.from(loginParams)
   const {table_name,params} = action.params
-  const updateParamKey = Object.keys(params)[0]
-  const updateParamValue = Object.values(params)[0]
+  const newParams = JSON.parse(params)
+  const updateParamKey = Object.keys(newParams)[0]
+  const updateParamValue = Object.values(newParams)[0]
   const updateParams = {
     TableName : parsers.autocomplete(table_name),
   }
-  updateParams[updateParamKey] = JSON.parse(updateParamValue)
+  updateParams[updateParamKey] = updateParamValue
   return await awsService.update_Table(updateParams)
 }
 
 async function create_BackUp(action, settings){
   const {accessKeyId, secretAccessKey} = settings
   const loginParams = {
-      region: parsers.autocomplete(action.params.region || settings.region)/* Change to correct parser */,
-      accessKeyId: parsers.string(accessKeyId)/* Change to correct parser */,
-      secretAccessKey: parsers.string(secretAccessKey)/* Change to correct parser */,
-  }
+    region: parsers.autocomplete(action.params.region) || parsers.string(settings.region)/* Change to correct parser */,
+    accessKeyId: parsers.string(action.params.accessKeyId) || parsers.string(accessKeyId)/* Change to correct parser */,
+    secretAccessKey: parsers.string(action.params.secretAccessKey) || parsers.string(secretAccessKey)/* Change to correct parser */,
+}
     
   const awsService = AwsDynamoDBService.from(loginParams)
   const {backUpName, table_name} = action.params
@@ -143,10 +144,10 @@ async function create_BackUp(action, settings){
 async function delete_BackUp(action, settings){
   const {accessKeyId, secretAccessKey} = settings
   const loginParams = {
-      region: parsers.autocomplete(action.params.region || settings.region)/* Change to correct parser */,
-      accessKeyId: parsers.string(accessKeyId)/* Change to correct parser */,
-      secretAccessKey: parsers.string(secretAccessKey)/* Change to correct parser */,
-  }
+    region: parsers.autocomplete(action.params.region) || parsers.string(settings.region)/* Change to correct parser */,
+    accessKeyId: parsers.string(action.params.accessKeyId) || parsers.string(accessKeyId)/* Change to correct parser */,
+    secretAccessKey: parsers.string(action.params.secretAccessKey) || parsers.string(secretAccessKey)/* Change to correct parser */,
+}
     
   const awsService = AwsDynamoDBService.from(loginParams)
   const {backUpName} = action.params
@@ -159,10 +160,10 @@ async function delete_BackUp(action, settings){
 async function put_Items(action, settings){
   const {accessKeyId, secretAccessKey} = settings
   const loginParams = {
-      region: parsers.autocomplete(action.params.region || settings.region)/* Change to correct parser */,
-      accessKeyId: parsers.string(accessKeyId)/* Change to correct parser */,
-      secretAccessKey: parsers.string(secretAccessKey)/* Change to correct parser */,
-  }
+    region: parsers.autocomplete(action.params.region) || parsers.string(settings.region)/* Change to correct parser */,
+    accessKeyId: parsers.string(action.params.accessKeyId) || parsers.string(accessKeyId)/* Change to correct parser */,
+    secretAccessKey: parsers.string(action.params.secretAccessKey) || parsers.string(secretAccessKey)/* Change to correct parser */,
+}
     
   const awsService = AwsDynamoDBService.from(loginParams)
   const {table_name, itemData} = action.params
@@ -176,10 +177,10 @@ async function put_Items(action, settings){
 async function batch_Write_Item(action, settings){
   const {accessKeyId, secretAccessKey} = settings
   const loginParams = {
-      region: parsers.autocomplete(action.params.region || settings.region)/* Change to correct parser */,
-      accessKeyId: parsers.string(accessKeyId)/* Change to correct parser */,
-      secretAccessKey: parsers.string(secretAccessKey)/* Change to correct parser */,
-  }
+    region: parsers.autocomplete(action.params.region) || parsers.string(settings.region)/* Change to correct parser */,
+    accessKeyId: parsers.string(action.params.accessKeyId) || parsers.string(accessKeyId)/* Change to correct parser */,
+    secretAccessKey: parsers.string(action.params.secretAccessKey) || parsers.string(secretAccessKey)/* Change to correct parser */,
+}
     
   const awsService = AwsDynamoDBService.from(loginParams)
   const {table_name, itemDatas} = action.params
@@ -202,10 +203,10 @@ async function batch_Write_Item(action, settings){
 async function get_Item(action, settings){
   const {accessKeyId, secretAccessKey} = settings
   const loginParams = {
-      region: parsers.autocomplete(action.params.region || settings.region)/* Change to correct parser */,
-      accessKeyId: parsers.string(accessKeyId)/* Change to correct parser */,
-      secretAccessKey: parsers.string(secretAccessKey)/* Change to correct parser */,
-  }
+    region: parsers.autocomplete(action.params.region) || parsers.string(settings.region)/* Change to correct parser */,
+    accessKeyId: parsers.string(action.params.accessKeyId) || parsers.string(accessKeyId)/* Change to correct parser */,
+    secretAccessKey: parsers.string(action.params.secretAccessKey) || parsers.string(secretAccessKey)/* Change to correct parser */,
+}
     
   const awsService = AwsDynamoDBService.from(loginParams)
   const {table_name, projectionExpression, key} = action.params
@@ -220,10 +221,10 @@ async function get_Item(action, settings){
 async function batch_Get_Item(action, settings){
   const {accessKeyId, secretAccessKey} = settings
   const loginParams = {
-      region: parsers.autocomplete(action.params.region || settings.region)/* Change to correct parser */,
-      accessKeyId: parsers.string(accessKeyId)/* Change to correct parser */,
-      secretAccessKey: parsers.string(secretAccessKey)/* Change to correct parser */,
-  }
+    region: parsers.autocomplete(action.params.region) || parsers.string(settings.region)/* Change to correct parser */,
+    accessKeyId: parsers.string(action.params.accessKeyId) || parsers.string(accessKeyId)/* Change to correct parser */,
+    secretAccessKey: parsers.string(action.params.secretAccessKey) || parsers.string(secretAccessKey)/* Change to correct parser */,
+}
     
   const awsService = AwsDynamoDBService.from(loginParams)
   const {table_name, projectionExpression, keys} = action.params
@@ -241,10 +242,10 @@ async function batch_Get_Item(action, settings){
 async function update_Item(action, settings){
   const {accessKeyId, secretAccessKey} = settings
   const loginParams = {
-      region: parsers.autocomplete(action.params.region || settings.region)/* Change to correct parser */,
-      accessKeyId: parsers.string(accessKeyId)/* Change to correct parser */,
-      secretAccessKey: parsers.string(secretAccessKey)/* Change to correct parser */,
-  }
+    region: parsers.autocomplete(action.params.region) || parsers.string(settings.region)/* Change to correct parser */,
+    accessKeyId: parsers.string(action.params.accessKeyId) || parsers.string(accessKeyId)/* Change to correct parser */,
+    secretAccessKey: parsers.string(action.params.secretAccessKey) || parsers.string(secretAccessKey)/* Change to correct parser */,
+}
     
   const awsService = AwsDynamoDBService.from(loginParams)
   const {table_name, expressionAttributeValues, expressionAttributeNames, key, setExpression} = action.params
@@ -262,10 +263,10 @@ async function update_Item(action, settings){
 async function delete_Item(action, settings){
   const {accessKeyId, secretAccessKey} = settings
   const loginParams = {
-      region: parsers.autocomplete(action.params.region || settings.region)/* Change to correct parser */,
-      accessKeyId: parsers.string(accessKeyId)/* Change to correct parser */,
-      secretAccessKey: parsers.string(secretAccessKey)/* Change to correct parser */,
-  }
+    region: parsers.autocomplete(action.params.region) || parsers.string(settings.region)/* Change to correct parser */,
+    accessKeyId: parsers.string(action.params.accessKeyId) || parsers.string(accessKeyId)/* Change to correct parser */,
+    secretAccessKey: parsers.string(action.params.secretAccessKey) || parsers.string(secretAccessKey)/* Change to correct parser */,
+}
     
   const awsService = AwsDynamoDBService.from(loginParams)
   const {table_name, key} = action.params
@@ -279,10 +280,10 @@ async function delete_Item(action, settings){
 async function query(action, settings){
   const {accessKeyId, secretAccessKey} = settings
   const loginParams = {
-      region: parsers.autocomplete(action.params.region || settings.region)/* Change to correct parser */,
-      accessKeyId: parsers.string(accessKeyId)/* Change to correct parser */,
-      secretAccessKey: parsers.string(secretAccessKey)/* Change to correct parser */,
-  }
+    region: parsers.autocomplete(action.params.region) || parsers.string(settings.region)/* Change to correct parser */,
+    accessKeyId: parsers.string(action.params.accessKeyId) || parsers.string(accessKeyId)/* Change to correct parser */,
+    secretAccessKey: parsers.string(action.params.secretAccessKey) || parsers.string(secretAccessKey)/* Change to correct parser */,
+}
     
   const awsService = AwsDynamoDBService.from(loginParams)
   const {table_name, ExpressionAttributeValues, KeyConditionExpression} = action.params
@@ -297,10 +298,10 @@ async function query(action, settings){
 async function scan(action, settings){
   const {accessKeyId, secretAccessKey} = settings
   const loginParams = {
-      region: parsers.autocomplete(action.params.region || settings.region)/* Change to correct parser */,
-      accessKeyId: parsers.string(accessKeyId)/* Change to correct parser */,
-      secretAccessKey: parsers.string(secretAccessKey)/* Change to correct parser */,
-  }
+    region: parsers.autocomplete(action.params.region) || parsers.string(settings.region)/* Change to correct parser */,
+    accessKeyId: parsers.string(action.params.accessKeyId) || parsers.string(accessKeyId)/* Change to correct parser */,
+    secretAccessKey: parsers.string(action.params.secretAccessKey) || parsers.string(secretAccessKey)/* Change to correct parser */,
+}
     
   const awsService = AwsDynamoDBService.from(loginParams)
   const {table_name, projectionExpression} = action.params
@@ -315,10 +316,10 @@ async function scan(action, settings){
 async function execute_Statement(action, settings){
   const {accessKeyId, secretAccessKey} = settings
   const loginParams = {
-      region: parsers.autocomplete(action.params.region || settings.region)/* Change to correct parser */,
-      accessKeyId: parsers.string(accessKeyId)/* Change to correct parser */,
-      secretAccessKey: parsers.string(secretAccessKey)/* Change to correct parser */,
-  }
+    region: parsers.autocomplete(action.params.region) || parsers.string(settings.region)/* Change to correct parser */,
+    accessKeyId: parsers.string(action.params.accessKeyId) || parsers.string(accessKeyId)/* Change to correct parser */,
+    secretAccessKey: parsers.string(action.params.secretAccessKey) || parsers.string(secretAccessKey)/* Change to correct parser */,
+}
     
   const awsService = AwsDynamoDBService.from(loginParams)
   const {statement} = action.params
@@ -332,10 +333,10 @@ async function execute_Statement(action, settings){
 async function bathcExecute_Statement(action, settings){
   const {accessKeyId, secretAccessKey} = settings
   const loginParams = {
-      region: parsers.autocomplete(action.params.region || settings.region)/* Change to correct parser */,
-      accessKeyId: parsers.string(accessKeyId)/* Change to correct parser */,
-      secretAccessKey: parsers.string(secretAccessKey)/* Change to correct parser */,
-  }
+    region: parsers.autocomplete(action.params.region) || parsers.string(settings.region)/* Change to correct parser */,
+    accessKeyId: parsers.string(action.params.accessKeyId) || parsers.string(accessKeyId)/* Change to correct parser */,
+    secretAccessKey: parsers.string(action.params.secretAccessKey) || parsers.string(secretAccessKey)/* Change to correct parser */,
+}
     
   const awsService = AwsDynamoDBService.from(loginParams)
   const {statements} = action.params

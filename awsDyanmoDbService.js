@@ -48,13 +48,13 @@ module.exports = class AwsDynamoDBService {
         return await dynamoAccess.createBackup(backupParams).promise()
     }
 
-    async delete_BackUp({BackupName}){
+    async delete_BackUp(backupParams){
         const dynamoAccess = this.getDynamoDb()
         const listBackUps = (await dynamoAccess.listBackups().promise()).BackupSummaries
         let backUpArn = ""
         
-        for (item of listBackUps){
-            if (item.BackupName === BackupName) backUpArn = item.BackupArn
+        for (let item of listBackUps){
+            if (item.BackupName === backupParams.BackupName) backUpArn = item.BackupArn
         }
         return await dynamoAccess.deleteBackup({BackupArn: backUpArn}).promise()
     }
