@@ -836,8 +836,8 @@
       ]
     },
     {
-      "name": "execute_Statement",
-      "viewName": "Execute Statement",
+      "name": "batchExecute_Statement",
+      "viewName": "Batch Execute Statement",
       "params": [
         {
           "name": "accessKeyId",

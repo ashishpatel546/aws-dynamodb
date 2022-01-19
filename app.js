@@ -330,7 +330,7 @@ async function execute_Statement(action, settings){
   return awsService.execute_Statement(statementParams)
 }
 
-async function bathcExecute_Statement(action, settings){
+async function batchExecute_Statement(action, settings){
   const {accessKeyId, secretAccessKey} = settings
   const loginParams = {
     region: parsers.autocomplete(action.params.region) || parsers.string(settings.region)/* Change to correct parser */,
@@ -372,7 +372,7 @@ module.exports ={
     scan,
     batch_Write_Item,
     execute_Statement,
-    bathcExecute_Statement,
+    batchExecute_Statement,
     // Autocomplete Functions
     ...require("./autocomplete")
 }
