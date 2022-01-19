@@ -54,9 +54,9 @@ function listAuto(listFuncName, fields) {
       const settings = mapAutoParams(pluginSettings);
       const params = mapAutoParams(triggerParameters);
       const client = awsDyanmoDbService.from({
-        region: parsers.string(parsers.autocomplete(params.region) ||settings.accessKeyId)/* Change to correct parser */,
-        accessKeyId: parsers.string(settings.accessKeyId)/* Change to correct parser */,
-        secretAccessKey: parsers.string(settings.secretAccessKey)/* Change to correct parser */,
+        region: parsers.string(settings.region) /* Change to correct parser */,
+        accessKeyId: parsers.string(params.accessKeyId) || parsers.string(settings.accessKeyId)/* Change to correct parser */,
+        secretAccessKey: parsers.string(params.secretAccessKey) || parsers.string(settings.secretAccessKey)/* Change to correct parser */,
       });
       const result = await client[listFuncName]({query: parsers.string(query), ...params});
       const items = handleResult(result, query, ...fields);
