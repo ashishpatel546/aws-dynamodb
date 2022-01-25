@@ -1,11 +1,13 @@
 {
   "name": "AWS-DynamoDB",
+  "viewName": "AWS DynamoDB";
   "type": "executer",
   "main": "app.js",
   "execProgram": "node",
   "exposeRoute": false,
   "imgUrl": "logo.png",
   "version": "1.0.0",
+  "keywords":["aws dynamodb", "amazon database", "dynamodb tables", "dynamodb items", "dynamodb queries"],
   "settings": [
     {
       "name": "accessKeyId",
@@ -75,7 +77,7 @@
           "name": "table_schema",
           "viewName": "Table Schema",
           "type": "text",
-          "description": "We give the perameters for make table in our database in json format",
+          "description": "The given parameters for creating the table in the database in JSON format",
           "placeholder": "[{ 'AttributeName': 'Season','AttributeType':'N','KeyType': 'HASH'}]",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.Basics.html#WorkingWithTables.Basics.CreateTable"
         }
@@ -117,8 +119,7 @@
           "type": "autocomplete",
           "autocompleteType": "function",
           "functionName": "getTable",
-          "description": "The name of the table",
-          "placeholder": "My_TableName",
+          "placeholder": "My_Table",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.Basics.html#WorkingWithTables.Basics.DeleteTable"
         }
       ]
@@ -159,15 +160,14 @@
           "type": "autocomplete",
           "autocompleteType": "function",
           "functionName": "getTable",
-          "description": "The name of the table",
-          "placeholder": "myTableName",
+          "placeholder": "My_Table",
           "learnUrl": "https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-dynamodb/interfaces/getitemcommandinput.html"
         },
         {
           "name": "params",
           "viewName": "Update Params",
           "type": "string",
-          "description": "Update Parameters",
+          "description": "The table parameters to be updated.",
           "placeholder": "{'ProvisionedThroughput': {'ReadCapacityUnits': '10', 'WriteCapacityUnits': '10'}}",
           "learnUrl": "https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-dynamodb/interfaces/getitemcommandinput.html"
         }
@@ -249,8 +249,7 @@
           "type": "autocomplete",
           "autocompleteType": "function",
           "functionName": "getTable",
-          "description": "The name of the table",
-          "placeholder": "My_TableName",
+          "placeholder": "My_Table",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.Basics.html#WorkingWithTables.Basics.DescribeTable"
         }
       ]
@@ -291,15 +290,14 @@
           "type": "autocomplete",
           "autocompleteType": "function",
           "functionName": "getTable",
-          "description": "The name of the table",
-          "placeholder": "My_TableName",
+          "placeholder": "My_Table",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Backups.html"
         },
         {
           "name": "backUpName",
           "viewName": "Back Up Name",
           "type": "string",
-          "description": "The name given to back up",
+          "description": "The name of the back up",
           "placeholder": "My_BackUp",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Backups.html"
         }
@@ -383,8 +381,7 @@
           "type": "autocomplete",
           "autocompleteType": "function",
           "functionName": "getTable",
-          "description": "The name of the table",
-          "placeholder": "My_TableName",
+          "placeholder": "My_Table",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"
         },
         {
@@ -433,15 +430,14 @@
           "type": "autocomplete",
           "autocompleteType": "function",
           "functionName": "getTable",
-          "description": "The name of the table",
-          "placeholder": "My_TableName",
+          "placeholder": "My_Table",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"
         },
         {
           "name": "itemDatas",
           "viewName": "Items",
           "type": "string",
-          "description": "The Items Data to put on the table. Put the item in JSON format seperated by ',' ",
+          "description": "The Items Data to put on the table. Enter the items in JSON format separated by ',' ",
           "placeholder": "{'AlbumTitle': {S: 'Somewhat Famous'}, 'Artist': {S: 'No One You Know'}, 'SongTitle': {S: 'Call Me Today'}}",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"
         }
@@ -483,8 +479,7 @@
           "type": "autocomplete",
           "autocompleteType": "function",
           "functionName": "getTable",
-          "description": "The name of the table",
-          "placeholder": "My_TableName",
+          "placeholder": "My_Table",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"
         },
         {
@@ -541,8 +536,7 @@
           "type": "autocomplete",
           "autocompleteType": "function",
           "functionName": "getTable",
-          "description": "The name of the table",
-          "placeholder": "myTableName",
+          "placeholder": "My_Table",
           "learnUrl": "https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-dynamodb/interfaces/getitemcommandinput.html"
         },
         {
@@ -599,8 +593,7 @@
           "type": "autocomplete",
           "autocompleteType": "function",
           "functionName": "getTable",
-          "description": "The name of the table",
-          "placeholder": "myTableName",
+          "placeholder": "My_Table",
           "learnUrl": "https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-dynamodb/interfaces/getitemcommandinput.html"
         },
         {
@@ -673,8 +666,7 @@
           "type": "autocomplete",
           "autocompleteType": "function",
           "functionName": "getTable",
-          "description": "The name of the table",
-          "placeholder": "My_TableName",
+          "placeholder": "My_Table",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html"
         },
         {
@@ -723,8 +715,7 @@
           "type": "autocomplete",
           "autocompleteType": "function",
           "functionName": "getTable",
-          "description": "The name of the table",
-          "placeholder": "myTableName",
+          "placeholder": "My_Table",
           "learnUrl": "https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-dynamodb/interfaces/getitemcommandinput.html"
         },
         {
@@ -781,8 +772,7 @@
           "type": "autocomplete",
           "autocompleteType": "function",
           "functionName": "getTable",
-          "description": "The name of the table",
-          "placeholder": "myTableName",
+          "placeholder": "My_Table",
           "learnUrl": "https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-dynamodb/interfaces/getitemcommandinput.html"
         },
         {
@@ -829,7 +819,7 @@
           "name": "statement",
           "viewName": "Statement",
           "type": "string",
-          "description": "Statement to execute(in PartiQL)",
+          "description": "Statement to execute (in PartiQL)",
           "placeholder": "SELECT * FROM Orders WHERE OrderID > 1",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ExecuteStatement.html"
         }
@@ -869,7 +859,7 @@
           "name": "statements",
           "viewName": "Statements",
           "type": "text",
-          "description": "Statements to execute(in PartiQL)",
+          "description": "Statements to execute (in PartiQL)",
           "placeholder": "Statement1, Statement2",
           "learnUrl": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ExecuteStatement.html"
         }
